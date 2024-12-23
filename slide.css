@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Unbounded:wght@200..900&display=swap');
+
+.main {
+  margin-top: 20px;
+}
+
+.container {
+  min-width: 0;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  /* Центрируем слайдер по горизонтали */
+  /* Центрируем слайдер по вертикали */
+  flex-direction: column;
+}
+
+.slider-wrapper {
+  max-width: 1220px;
+  /* Максимальная ширина обертки */
+  background-color: #1e1e1e;
+  /* Задний фон */
+  padding: 20px;
+  /* Отступы вокруг слайдера */
+  border-radius: 20px;
+  /* Округляем углы обертки */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, .6);
+  /* Добавляем тень */
+  margin: 0 auto;
+  /* Центрируем обертку */
+}
+
+.slider-title {
+  font-family: "Unbounded";
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: #fff;
+  text-align: left;
+}
+
+.image-slider {
+  width: 100%;
+  max-width: 1220px;
+  height: 100%;
+  /* Уменьшили высоту слайдера */
+  overflow: hidden;
+  position: relative;
+  /* Добавили отступ под слайдер для буллетов */
+}
+
+.image-slider__wrapper {
+  display: flex;
+}
+
+.image-slider__slide {
+  width: 1500px;
+  height: 350px;
+  position: relative;
+}
+
+.image-slider__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image-slider__image img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.text-layer {
+  position: relative;
+  /* Отступ от левого края */
+  z-index: 3;
+  /* Текст отображается выше затемнения */
+  bottom: 40px;
+  left: 10px;
+}
+
+.darken-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  border-radius: 15px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(70, 70, 70, 0.5) 75%, rgba(255, 255, 255, 0.001) 100%);
+  /* Полупрозрачный слой */
+  z-index: 1;
+  /* Отправляем затемнение на задний план */
+  pointer-events: none;
+  /* Затемнение не будет блокировать клики */
+}
+
+.game-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.25);
+  transition: all 0.2s;
+}
+
+/* Стили для кнопок prev и next */
+.image-slider .swiper-button-prev,
+.image-slider .swiper-button-next {
+  position: absolute;
+  top: 40%;
+  color: #fff;
+  z-index: 10;
+  text-shadow: 1px 1px 5px rgb(0, 0, 0);
+  transition: all 0.2s;
+}
+
+.image-slider .swiper-button-prev {
+  left: 24px;
+}
+
+.image-slider .swiper-button-next {
+  right: 24px;
+}
+
+/* Стили для буллетов */
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  /* Отступ от слайдера */
+}
+
+.swiper-pagination-bullet {
+  width: 80px;
+  height: 5px;
+  background-color: #888;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+}
+
+/* Стили для активного буллета */
+.swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+
+.swiper-pagination-bullet:hover {
+  background-color: #fff;
+}
+
+.game-title:hover {
+  color: #af42ff;
+  text-shadow: 0px 0px 8px rgba(212, 0, 255, 0.5);
+}
+
+.image-slider .swiper-button-prev:hover,
+.image-slider .swiper-button-next:hover {
+  color: #af42ff;
+}

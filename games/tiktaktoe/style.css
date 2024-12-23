@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Unbounded:wght@200..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 8px 8px;
+  background-color: #242424;
+  min-height: 50px;
+  color: white;
+  text-align: center;
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  position: relative;
+  display: block;
+  background-color: #242424;
+  min-height: 100px;
+  color: white;
+  flex: 0 0 auto;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.header-link {
+  margin-right: auto;
+  margin-left: 15px;
+}
+
+.header-logo {
+  width: 120px;
+  height: 60px;
+}
+
+.header-game-name {
+  flex: 1;
+  text-align: center;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin: auto;
+  margin-right: 135px;
+}
+
+.content {
+  display: flex;
+  margin: 100px 50px 50px 50px;
+  font-family: sans-serif;
+}
+
+#area {
+  width: 156px;
+  border: 1px solid #000;
+  margin: 0 auto;
+  font-size: 0;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  display: inline-block;
+  font-size: 26px;
+  border: 1px solid #000;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background-color .1s;
+}
+
+.cell:hover {
+  background-color: #f1f1f1;
+}
+
+.current-player {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  font-size: 18px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.stat table {
+  border-collapse: collapse;
+}
+
+.stat table, .stat th, .stat td {
+  border: 1px solid #000;
+  padding: 5px;
+  text-align: center;
+}
