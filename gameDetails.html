@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>Главная</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@11.1.15/swiper-bundle.min.css">
+  <link href="/style.css" rel="stylesheet">
+  <link href="/gameDetails.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <header class="header">
+      <div class="header-container">
+        <a class="" href="/">
+          <img class="header-logo" src="images/logo-ru.png" alt="Логотип">
+        </a>
+        <nav class="header-nav">
+          <a class="active" href="/index.html" data-key="nav1">Главная</a>
+          <a class="" href="/onlineGames.html" data-key="nav2">Онлайн игры</a>
+          <a class="" href="/allNews.html" data-key="nav3">Новости</a>
+        </nav>
+
+        <div class="language-switcher">
+          <div class="circle active" data-lang="ru">
+            <img src="/images/ru.png" alt="Русский" class="lang-icon">
+          </div>
+          <div class="circle" data-lang="en">
+            <img src="/images/en.png" alt="Английский" class="lang-icon">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="game-detail">
+        <header class="game-header">
+          <img class="game-cover" src="game-cover.jpg" alt="Обложка игры">
+          <div class="game-info">
+            <h1 class="game-title">Название игры</h1>
+            <p class="game-description">
+              Описание.
+            </p>
+          </div>
+        </header>
+
+        <div class="game-details">
+          <p><strong>Дата выхода:</strong> 20 декабря 2024</p>
+          <p><strong>Жанр:</strong> Экшн, RPG</p>
+
+          <p><strong>Платформы:</strong></p>
+
+          <p><strong>Издатель:</strong> <a href="https://example.com/publisher" target="_blank">Студия</a></p>
+        </div>
+      </section>
+    </main>
+
+
+    <footer class="footer">
+      <p data-key="footer-text">
+        Данные из Steam, PSN, Xbox Live, App Store, Google Play, GOG, Википедии, YouTube, Twitch, Reddit и Imgur, Яндекс,
+        AG, JS13kGames.
+      </p>
+    </footer>
+    
+  </div>
+  <script src="/gameDetails.js"></script>
+  <script src="/script.js"></script>
+</body>
+
+</html>

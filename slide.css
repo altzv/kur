@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Unbounded:wght@200..900&display=swap');
 
-.main {
+main {
   margin-top: 20px;
 }
 
@@ -56,6 +56,7 @@
   width: 1500px;
   height: 350px;
   position: relative;
+  transition: all 0.3s ease;
 }
 
 .image-slider__image {
@@ -88,7 +89,7 @@
   width: 100%;
   height: 75%;
   border-radius: 15px;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(70, 70, 70, 0.5) 75%, rgba(255, 255, 255, 0.001) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(255, 255, 255, 0.001) 100%);
   /* Полупрозрачный слой */
   z-index: 1;
   /* Отправляем затемнение на задний план */
@@ -156,4 +157,9 @@
 .image-slider .swiper-button-prev:hover,
 .image-slider .swiper-button-next:hover {
   color: #af42ff;
+}
+
+.image-slider__slide.swiper-slide-prev,
+.image-slider__slide.swiper-slide-next {
+  transform: scale(0.95);
 }

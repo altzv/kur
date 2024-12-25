@@ -91,9 +91,9 @@ new Swiper('.image-slider', {
   loop: true,
   centeredSlides: true,
   slidesPerView: 3,
-  spaceBetween: 10,
-  autoPlay: {
-    delay: 1000,
+  spaceBetween: 30,
+  autoplay: {
+    delay: 2000,
     stopOnLastSlide: false,
     disableOnInteraction: false
   }

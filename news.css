@@ -1,0 +1,114 @@
+/* Основные стили для страницы новости */
+.news-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* Начинаем выравнивание с верхней части */
+  max-width: 1220px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #242424;
+  border-radius: 10px;
+  color: #fff;
+}
+
+/* Контейнер для содержимого */
+.news-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  /* Центрируем содержимое */
+}
+
+/* Заголовок новости */
+.news-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #af42ff;
+  margin-bottom: 20px;
+  text-align: left;
+  /* Заголовок остается по левому краю */
+}
+
+/* Изображение новости */
+.news-image {
+  width: auto;
+  max-width: 80%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* Центрируем изображение */
+}
+
+/* Текст новости */
+.news-content {
+  margin: 0 auto;
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ccc;
+  text-align: left;
+  /* Центрируем текст */
+  padding: 0 10px;
+}
+
+/* Ссылки в тексте */
+.news-content a {
+  color: #d294ff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.news-content a:hover {
+  color: #af42ff;
+  text-shadow: 2px 2px 5px rgba(212, 0, 255, 0.25);
+}
+
+/* Дополнительные стили для списков */
+.news-content ul,
+.news-content ol {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  /* Списки выравниваются по левому краю */
+}
+
+.news-content li {
+  margin-bottom: 10px;
+}
+
+iframe {
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+blockquote {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #191919;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .news-container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .news-title {
+    font-size: 28px;
+  }
+
+  .news-content {
+    font-size: 16px;
+  }
+}

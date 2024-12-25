@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новость</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/news.css">
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <header class="header">
+      <div class="header-container">
+        <a class="" href="/">
+          <img class="header-logo" src="/images/logo-ru.png" alt="Логотип">
+        </a>
+        <nav class="header-nav">
+          <a class="" href="/index.html" data-key="nav1">Главная</a>
+          <a class="" href="/onlineGames.html" data-key="nav2">Онлайн игры</a>
+          <a class="" href="/allNews.html" data-key="nav3">Новости</a>
+        </nav>
+    
+        <div class="language-switcher">
+          <div class="circle active" data-lang="ru">
+            <img src="/images/ru.png" alt="Русский" class="lang-icon">
+          </div>
+          <div class="circle" data-lang="en">
+            <img src="/images/en.png" alt="Английский" class="lang-icon">
+          </div>
+        </div>
+    
+      </div>
+    </header>
+
+    <main class="main news-page">
+      <div class="news-container">
+        <h1 class="news-title" style="cursor: auto;"></h1>
+        <img src="" alt="Изображение новости" class="news-image">
+        <div class="news-content"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p data-key="footer-text">
+        Данные из Steam, PSN, Xbox Live, App Store, Google Play, GOG, Википедии, YouTube, Twitch, Reddit и Imgur, Яндекс,
+        AG, JS13kGames.
+      </p>
+    </footer>
+
+  </div>
+  <script src="/script.js"></script>
+  <script src="/news.js"></script>
+</body>
+
+</html>
