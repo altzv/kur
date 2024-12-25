@@ -1,24 +1,32 @@
-const platformsData = {
-  "ПК": "/images/icons/pc.svg",
-  "PlayStation 5": "/images/icons/ps5.svg",
-  "Steam": "/images/icons/steam.svg",
-};
-
-
 const games = [
   {
     id: 1,
-    title: "Смута",
+    title: { ru: "Смута", en: "Distemper"},
     cover: "/images/games/smuta.webp",
-    description: 
-    `
-      Вместе с князем Милославским игрок сможет погрузиться в атмосферу того беспокойного времени, посетить не только Москву, но и Ярославль с Нижним Новгородом. Стать непосредственным участником событий, которые ознаменовали начало Нового времени. Великих перемен, которые определили государственное и политическое устройство России.
-      Главный герой этого приключения, боярин Юрий Милославский, принимает личное участие и в сборе Нижегородского ополчения, и в Битве за Москву, и в других, не менее важных, исторических событиях Смутного времени. Милославский шаг за шагом исправляет ошибки своего прошлого, а в результате — способствует прекращению Смуты и объединению Московской Руси.
-    `,
-    releaseDate: "4 апреля 2024",
+    description: {
+      ru:
+      `
+        Вместе с князем Милославским игрок сможет погрузиться в атмосферу того беспокойного времени, посетить не только Москву, но и Ярославль с Нижним Новгородом. Стать непосредственным участником событий, которые ознаменовали начало Нового времени. Великих перемен, которые определили государственное и политическое устройство России.
+        Главный герой этого приключения, боярин Юрий Милославский, принимает личное участие и в сборе Нижегородского ополчения, и в Битве за Москву, и в других, не менее важных, исторических событиях Смутного времени. Милославский шаг за шагом исправляет ошибки своего прошлого, а в результате — способствует прекращению Смуты и объединению Московской Руси.
+      `,
+      en:
+      `
+        Together with Prince Miloslavsky, the player will be able to immerse himself in the atmosphere of that turbulent time, visit not only Moscow, but also Yaroslavl and Nizhny Novgorod. Become a direct participant in the events that marked the beginning of the New Time. Great changes that determined the state and political structure of Russia. The main character of this adventure, boyar Yuri Miloslavsky, takes personal part in the gathering of the Nizhny Novgorod militia, and in the Battle of Moscow, and in other, no less important, historical events of the Time of Troubles. Miloslavsky step by step corrects the mistakes of his past, and as a result, contributes to the end of the Time of Troubles and the unification of Muscovite Rus.
+      `,
+    },
+    releaseDate: {
+      ru: `4 апреля 2024`,
+      en: `4 april 2024`,
+    },
     publisher: "Cyberia Nova",
-    genre: "Экшен, Ролевая",
-    platforms: "ПК",
+    genre: {
+      ru: `Экшен, Ролевая`,
+      en: `Action, Role`,
+    },
+    platforms: {
+      ru: `ПК`,
+      en: `PC`,
+    },
     marketplaces: `<a target="__blank" href="https://vkplay.ru/play/game/smuta/">VK Play</a>`,
   },
   {
@@ -95,30 +103,62 @@ const games = [
   },
 ];
 
-const urlParams = new URLSearchParams(window.location.search);
-const gameId = parseInt(urlParams.get('id')); // Получаем значение id
+document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const gameId = parseInt(urlParams.get('id')); // Получаем значение id
 
-const currentGame = games.find(game => game.id === gameId);
+    // Дефолтный язык
+    let currentLanguage = localStorage.getItem('selectedLanguage') || 'ru';
 
-if (currentGame) {
-  // Заполняем страницу данными
-  document.querySelector('.game-title').textContent = currentGame.title;
-  document.querySelector('.game-cover').src = currentGame.cover;
+  // Загружаем языковой файл
+  function loadLanguage(lang) {
+      fetch(`/lang/${lang}.json`)
+          .then(response => response.json())
+          .then(translations => {
+              updatePageContent(translations, lang);
+              localStorage.setItem('selectedLanguage', lang);
+          })
+          .catch(error => console.error("Ошибка загрузки языка:", error));
+  }
 
-  // Обновляем описание с поддержкой HTML
-  document.querySelector('.game-description').innerHTML = currentGame.description;
+  // Обновляем контент страницы
+  function updatePageContent(translations, lang) {
+      const currentGame = games.find(game => game.id === gameId);
 
-  // Обновляем другие данные
-  document.querySelector('.game-details').innerHTML = `
-    <p><b>Дата выхода:</b> ${currentGame.releaseDate}</p>
-    <p><b>Платформы:</b> ${currentGame.platforms}</p>
-    <p><b>Издатели:</b> ${currentGame.publisher}</p>
-    <p><b>Площадки:</b> ${currentGame.marketplaces}</p>
-    <p><b>Жанр:</b> ${currentGame.genre}</p>
-  `;
-} else {
-  // Если игра не найдена, показываем ошибку
-  document.querySelector('.game-title').textContent = "Игра не найдена";
-  document.querySelector('.game-description').innerHTML = "К сожалению, информация о данной игре не найдена.";
-  document.querySelector('.game-cover').src = "/images/news_images/error.png"; // Указание на изображение ошибки
-};
+      if (currentGame) {
+          // Обновляем заголовок
+          document.querySelector('.game-title').textContent = currentGame.title[lang];
+
+          // Обновляем обложку
+          document.querySelector('.game-cover').src = currentGame.cover;
+
+          // Обновляем описание
+          document.querySelector('.game-description').innerHTML = currentGame.description[lang];
+
+          // Обновляем детали игры
+          document.querySelector('.game-details').innerHTML = `
+              <p><b>${translations.releaseDate}:</b> ${currentGame.releaseDate[lang]}</p>
+              <p><b>${translations.platforms}:</b> ${currentGame.platforms[lang]}</p>
+              <p><b>${translations.publisher}:</b> ${currentGame.publisher}</p>
+              <p><b>${translations.marketplaces}:</b> ${currentGame.marketplaces}</p>
+              <p><b>${translations.genre}:</b> ${currentGame.genre[lang]}</p>
+          `;
+      } else {
+          // Если игра не найдена
+          document.querySelector('.game-title').textContent = translations.gameNotFound;
+          document.querySelector('.game-description').innerHTML = translations.descriptionNotFound;
+          document.querySelector('.game-cover').src = "/images/news_images/error.png";
+      }
+  }
+
+  // Обработчик смены языка
+  document.querySelectorAll('.circle').forEach(circle => {
+      circle.addEventListener('click', function () {
+          const selectedLang = this.getAttribute('data-lang');
+          loadLanguage(selectedLang);
+      });
+  });
+
+  // Загружаем начальный язык
+  loadLanguage(currentLanguage);
+});

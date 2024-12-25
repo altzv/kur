@@ -10,7 +10,7 @@ function scrollStatusText() {
 scrollStatusText();
 
 function loadLanguage(lang) {
-    fetch(`./lang/${lang}.json`)
+    fetch(`/lang/${lang}.json`)
         .then(response => response.json())
         .then(data => {
             // Обновляем текстовые элементы на странице
@@ -24,58 +24,45 @@ function loadLanguage(lang) {
         .catch(error => console.error('Error loading language file:', error));
 }
 
-loadLanguage('ru');
+function setLanguage(lang) {
+    localStorage.setItem('selectedLanguage', lang);
+    loadLanguage(lang);
+    document.documentElement.lang = lang;
 
+    // Изменяем логотип или другие элементы
+    switch (lang) {
+        case 'ru':
+            document.querySelector(".header-logo").src = "/images/logo-ru.png";
+            break;
+        case 'en':
+            document.querySelector(".header-logo").src = "/images/logo-en.png";
+            break;
+    }
 
-// Обработчик переключения языка
-const circles = document.querySelectorAll('.circle');
-circles.forEach(circle => {
-    circle.addEventListener('click', function() {
-        const lang = this.getAttribute('data-lang');
-        loadLanguage(lang);
-    });
-});
-
-circles.forEach(circle => {
-    circle.addEventListener('click', function() {
-        // Удаляем класс 'active' у всех кругов
-        circles.forEach(c => c.classList.remove('active'));
-        // Добавляем класс 'active' к выбранному кругу
-        this.classList.add('active');
-
-        // Получаем выбранный язык
-        const selectedLang = this.getAttribute('data-lang');
-
-        // Логика переключения языков (можно добавить больше условий)
-        switch (selectedLang) {
-            case 'ru':
-                document.documentElement.lang = 'ru';
-                break;
-            case 'en':
-                document.documentElement.lang = 'en';
-                break;
+    // Обновляем активный круг
+    document.querySelectorAll('.circle').forEach(circle => {
+        circle.classList.remove('active');
+        if (circle.getAttribute('data-lang') === lang) {
+            circle.classList.add('active');
         }
     });
-});
-
-// Переменная для хранения текущего языка (по умолчанию русский)
-let currentLanguage = 'ru';
-
-// Функция для обновления языка
-function setLanguage(lang) {
-currentLanguage = lang;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'ru';
+    setLanguage(savedLanguage); // Устанавливаем язык
+
     const circles = document.querySelectorAll('.circle');
 
+    // Добавляем обработчики переключения языка
     circles.forEach(circle => {
-        circle.addEventListener('click', function() {
+        circle.addEventListener('click', function () {
             const lang = this.getAttribute('data-lang');
-            setLanguage(lang); // Устанавливаем выбранный язык
+            setLanguage(lang);
         });
     });
 });
+
 
 new Swiper('.image-slider', {
   navigation: {
