@@ -147,9 +147,7 @@ footer p {
   color: white;
   text-align: left;
   background-color: #242424;
-  /* Фон для секции новостей */
   border-radius: 15px;
-  /* Скругление углов */
   box-sizing: border-box;
 }
 
@@ -182,24 +180,19 @@ footer p {
 
 .news-item:not(:last-child) {
   border-bottom: 1px solid #555;
-  /* Разделитель между новостями */
 }
 
 .news-image {
   width: 200px;
-  /* Сделать картинку шире */
   height: 120px;
-  /* Сделать картинку прямоугольной */
   object-fit: cover;
   margin-right: 20px;
   border-radius: 8px;
-  /* Скругленные углы для картинки */
   transition: transform 0.3s ease;
 }
 
 .news-image:hover {
   transform: scale(1.05);
-  /* Увеличение картинки при наведении */
 }
 
 .news-text {
@@ -216,9 +209,7 @@ footer p {
   transition: all 0.3s;
   cursor: pointer;
   width: auto;
-  /* Убираем ограничение на ширину */
   max-width: 800px;
-  /* Ограничение для текста */
   line-height: 1.4;
 }
 
@@ -236,11 +227,8 @@ footer p {
   cursor: pointer;
   z-index: 20;
   position: absolute;
-  /* Для закрепления в правом верхнем углу */
   top: 50%;
-  /* Центр по вертикали */
   transform: translateY(-50%);
-  /* Центрируем по вертикали */
 }
 
 .hamburger-menu span {
@@ -250,11 +238,10 @@ footer p {
   border-radius: 5px;
 }
 
-/* Адаптивность для мобильных устройств */
+/* Адаптивность для экранов меньше 768px */
 @media (max-width: 768px) {
   .header-nav {
     display: none;
-    /* Скрыть навигацию по умолчанию */
     flex-direction: column;
     width: 20%;
     background-color: #242424;
@@ -275,11 +262,8 @@ footer p {
   .header-logo__wrapper {
     display: flex;
     justify-content: center;
-    /* Центрируем логотип по горизонтали */
     align-items: center;
-    /* Центрируем логотип по вертикали */
     width: auto;
-    /* Логотип будет занимать всю доступную ширину */
     margin: 0 auto;
     transform: translateX(35%);
   }
@@ -291,7 +275,6 @@ footer p {
   .header-nav.active {
     display: flex;
     z-index: 20;
-    /* Показываем меню, когда активен класс */
   }
 
   .header-container {
@@ -332,7 +315,7 @@ footer p {
   }
 }
 
-/* Адаптивность для очень маленьких экранов */
+/* Адаптивность для экранов меньше 480px */
 @media (max-width: 480px) {
 
   .news-title {
@@ -356,25 +339,20 @@ footer p {
   .header-logo__wrapper {
     display: flex;
     justify-content: center;
-    /* Центрируем логотип по горизонтали */
     align-items: center;
-    /* Центрируем логотип по вертикали */
     width: auto;
-    /* Логотип будет занимать всю доступную ширину */
     margin: 0 auto;
     transform: translateX(30%);
   }
 }
 
+/* Адаптивность для экранов меньше 375px */
 @media (max-width: 375px) {
   .header-logo__wrapper {
     display: flex;
     justify-content: center;
-    /* Центрируем логотип по горизонтали */
     align-items: center;
-    /* Центрируем логотип по вертикали */
     width: auto;
-    /* Логотип будет занимать всю доступную ширину */
     margin: 0 auto;
     transform: translateX(15%);
   }
@@ -384,6 +362,7 @@ footer p {
   }
 }
 
+/* Адаптивность для экранов меньше 320px */
 @media (max-width: 320px) {
   .news-image {
     width: 100px;
