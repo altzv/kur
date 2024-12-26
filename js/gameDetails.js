@@ -31,74 +31,99 @@ const games = [
   },
   {
     id: 2,
-    title: "Atomic Heart",
+    title: { ru: "Atomic Heart", en: "Atomic Heart"},
     cover: "/images/games/atomic-heart.jpg",
-    description:
-    `
-      Добро пожаловать в дивный мир совершенства и технологий, где люди живут бок о бок с верными помощниками-роботами!
-      <br><br>Так бы они и жили дальше, пойди всё по плану. Но до запуска новейшей системы управления роботами остаётся всего несколько дней, и что-то идёт не так... Что это — трагическая случайность или зловещий заговор?
-    `,
-    releaseDate: "21 февраля 2023",
+    description: {
+      ru : `
+        Добро пожаловать в дивный мир совершенства и технологий, где люди живут бок о бок с верными помощниками-роботами!
+        <br><br>Так бы они и жили дальше, пойди всё по плану. Но до запуска новейшей системы управления роботами остаётся всего несколько дней, и что-то идёт не так... Что это — трагическая случайность или зловещий заговор?
+      `,
+      en : `
+        Welcome to the wonderful world of perfection and technology, where people live side by side with their faithful robot assistants!
+        <br><br>They would have lived like this, if everything had gone according to plan. But there are only a few days left before the launch of the newest robot control system, and something goes wrong... Is it a tragic accident or a sinister conspiracy?
+      `,
+    },
+    releaseDate: {
+      ru: `21 февраля 2023`,
+      en: `21 february 2023`,
+    },
     publisher:
     `
       <a target="__blank" href="https://stopgame.ru/company/58279">Focus Entertainment</a>
       <a href="https://stopgame.ru/company/59421" target="__blank">Astrum Entertainment</a>
       <a href="https://stopgame.ru/company/65381" target="__blank">4Divinity</a>
     `,
-    genre: "Экшен",
-    platforms: "ПК, PS4, PS5, XONE, XBOXSX",
+    genre: {ru: `Экшен`, en: `Action`},
+    platforms: {ru: `ПК, PS4, PS5, XONE, XBOXSX`, en: `PC, PS4, PS5, XONE, XBOXSX`},
     marketplaces: `<a target="__blank" href="https://store.steampowered.com/app/668580">Steam</a>`,
   },
   {
     id: 3,
-    title: "Русы против Ящеров",
+    title: {ru: `Русы против Ящеров`, en: `Russians vs. Lizards`},
     cover: "/images/games/rus_vs.jpg",
-    description:
-    `
-      Великие подвиги Древних Русов в войне с ящерами. Погрузитесь в мир Гипербореи и одолейте полчища Ящеров и других иродов, покусившихся на святые места Предков. Выберите достойного героя и отправляйтесь спасать мир от зелёной чумы.
-    `,
-    releaseDate: "27 сентября 2023",
+    description: {
+      ru: `
+        Великие подвиги Древних Русов в войне с ящерами. Погрузитесь в мир Гипербореи и одолейте полчища Ящеров и других иродов, покусившихся на святые места Предков. Выберите достойного героя и отправляйтесь спасать мир от зелёной чумы.
+      `,
+      en: `
+        Great feats of the Ancient Rus in the war with the lizards. Dive into the world of Hyperborea and defeat the hordes of Lizards and other Herods who encroached on the holy places of the Ancestors. Choose a worthy hero and go save the world from the green plague.
+      `
+    },
+    releaseDate: {
+      ru: `27 сентября 2023`,
+      en: `27 september 2023`,
+    },
     publisher:
     `
       <a target="__blank" href="https://stopgame.ru/company/61498">Agafonoff</a>
       <a href="https://stopgame.ru/company/62458" target="__blank">Smola Game Studio</a>
     `,
-    genre: "Экшен",
-    platforms: "ПК",
+    genre: {ru: `Экшен`, en: `Action`},
+    platforms: {ru: `ПК`, en: `PC`},
     marketplaces: `<a target="__blank" href="https://store.steampowered.com/app/2532550">Steam</a>`,
   },
   {
     id: 4,
-    title: "Vladik Brutal",
+    title: { ru: `Vladik Brutal`, en: `Vladik Brutal`},
     cover: "/images/games/vladik-brutal.jpg",
-    description:
-    `
-      Сражайтесь под натиском мутированных людей, одержимых солдат и еще более мрачных боссов. Пытайтесь выжить и выяснить, что делать дальше в этой жизни, попутно разрывая на куски своих врагов.
-    `,
-    releaseDate: "9 августа 2024",
+    description: {
+      ru: `
+        Сражайтесь под натиском мутированных людей, одержимых солдат и еще более мрачных боссов. Пытайтесь выжить и выяснить, что делать дальше в этой жизни, попутно разрывая на куски своих врагов.
+      `,
+      en: `
+        Fight against mutated humans, possessed soldiers, and even darker bosses. Try to survive and figure out what to do next in this life, while tearing your enemies to pieces.
+      `
+    },
+    releaseDate: {
+      ru: `9 августа 2024`,
+      en: `9 august 2024`,
+    },
     publisher:
     `
       <a target="__blank" href="https://stopgame.ru/company/40949">Narko Games</a>
     `,
-    genre: "Экшен",
-    platforms: "ПК",
+    genre: {ru: `Экшен`, en: `Action`},
+    platforms: {ru: `ПК`, en: `PC`},
     marketplaces: `<a target="__blank" href="https://store.steampowered.com/app/1316680">Steam</a>`,
   },
   {
     id: 5,
-    title: "MiSide",
+    title: { ru: `MiSide`, en: `MiSide`},
     cover: "/images/games/miside.jpg",
-    description:
-    `
-      Представим, что у вас есть игра, в которой вы ухаживаете за персонажем. Но могли бы вы себе представить, что однажды сами попадете в эту игру?
-    `,
-    releaseDate: "11 декабря 2024",
+    description: {
+      ru: `Представим, что у вас есть игра, в которой вы ухаживаете за персонажем. Но могли бы вы себе представить, что однажды сами попадете в эту игру?`,
+      en: `Let's say you have a game where you're courting a character. But could you imagine that one day you'll get into that game yourself?`
+    },
+    releaseDate: {
+      ru: `11 декабря 2024`,
+      en: `11 december 2024`,
+    },
     publisher:
     `
       <a target="__blank" href="https://stopgame.ru/company/62480">Aihasto</a>
     `,
-    genre: "Приключения, Ролевая, Симулятор",
-    platforms: "ПК",
+    genre: {ru: `Приключения, Ролевая, Симулятор`, en: `Adventure, Role-playing, Simulation`},
+    platforms: {ru: `ПК`, en: `PC`},
     marketplaces: `<a target="__blank" href="https://store.steampowered.com/app/2527500">Steam</a>`,
   },
 ];

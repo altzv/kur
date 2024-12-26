@@ -87,7 +87,7 @@ footer p {
   line-height: 24px;
   background: none;
   margin-right: 32px;
-  color: rgba(254, 255, 255, .6);
+  color: #8b8b8b;
   -webkit-transition: color .2s;
   transition: color .2s;
 }

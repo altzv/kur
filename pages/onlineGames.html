@@ -4,9 +4,8 @@
   <title>Онлайн игры</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="/style.css" rel="stylesheet">
-  <link href="/onlineGames.css" rel="stylesheet">
-  <script defer src="script.js"></script>
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/css/onlineGames.css" rel="stylesheet">
 </head>
 <body>
   <div class="wrapper">
@@ -14,14 +13,14 @@
     <header class="header">
       <div class="header-container">
         <div class="header-logo__wrapper">
-          <a href="/">
-            <img class="header-logo" src="images/logo-ru.png" alt="Логотип">
+          <a href="/index.html">
+            <img class="header-logo" src="/images/logo-ru.png" alt="Логотип">
           </a>
         </div>
         <nav class="header-nav">
           <a class="" href="/index.html" data-key="nav1">Главная</a>
-          <a class="active" href="/onlineGames.html" data-key="nav2">Онлайн игры</a>
-          <a class="" href="/allNews.html" data-key="nav3">Новости</a>
+          <a class="active" href="/pages/onlineGames.html" data-key="nav2">Онлайн игры</a>
+          <a class="" href="/pages/allNews.html" data-key="nav3">Новости</a>
         </nav>
         
         <div class="hamburger-menu" id="hamburger-menu">
@@ -46,37 +45,11 @@
       <div class="container">
         <div class="game-container">
 
-          <!-- <div class="game-box">
-            <div class="game-box__wrapper">
-              <div class="game-box__media">
-                <div class="game-box__media-wrapper">
-                  <div class="game-box__media-image" style="background-image: url(images/bash-arena.jpg);"></div>
-                </div>
-              </div>
-              <div class="game-box__body">
-                <div class="game-box__info">
-                  <div class="heading heading_4">
-                    <a href="/games/bash-arena.html" class="game-box__info__name" data-key="bash-arena">Баш Арена</a>
-                    <div class="game-box__info__description" data-key="bash-arena__desc">
-                      Хардкорный рогалик в котором рыцарь рубит монстров. А потом еще
-                      раз рубит монстров. А потом еще раз.
-                    </div>
-                  </div>
-                  <div class="game-box__info-footer">
-                    <div class="game-box-buttons">
-                      <div class="game-box-button"><a href="/games/bash-arena.html" data-key="play-button">Играть</a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
           <div class="game-box">
             <div class="game-box__wrapper">
               <div class="game-box__media">
                 <div class="game-box__media-wrapper">
-                  <div class="game-box__media-image" style="background-image: url(images/mkad.png);"></div>
+                  <div class="game-box__media-image" style="background-image: url(/images/mkad.png);"></div>
                 </div>
               </div>
               <div class="game-box__body">
@@ -102,7 +75,7 @@
             <div class="game-box__wrapper">
               <div class="game-box__media">
                 <div class="game-box__media-wrapper">
-                  <div class="game-box__media-image" style="background-image: url(images/2048.jpg);"></div>
+                  <div class="game-box__media-image" style="background-image: url(/images/2048.jpg);"></div>
                 </div>
               </div>
               <div class="game-box__body">
@@ -123,36 +96,11 @@
             </div>
           </div>
 
-          <!-- <div class="game-box">
-            <div class="game-box__wrapper">
-              <div class="game-box__media">
-                <div class="game-box__media-wrapper">
-                  <div class="game-box__media-image" style="background-image: url(images/turbo-zhiga.png);"></div>
-                </div>
-              </div>
-              <div class="game-box__body">
-                <div class="game-box__info">
-                  <div class="heading heading_4">
-                    <a href="/games/fpv.html" class="game-box__info__name" data-key="drone">Турбо жига</a>
-                    <div class="game-box__info__description" data-key="drone__desc">
-                      Турбо Жига - идеальный инструмент для того, чтобы навести суеты на дороге! Наведи суеты и набери 5 звёзд розыска, устроив эпичную погоню от полиции!
-                    </div>
-                  </div>
-                  <div class="game-box__info-footer">
-                    <div class="game-box-buttons">
-                      <div class="game-box-button"><a href="/games/fpv.html" data-key="play-button">Играть</a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
           <div class="game-box">
             <div class="game-box__wrapper">
               <div class="game-box__media">
                 <div class="game-box__media-wrapper">
-                  <div class="game-box__media-image" style="background-image: url(images/hextris.jpg);"
+                  <div class="game-box__media-image" style="background-image: url(/images/hextris.jpg);"
                     onclick="window.open('/games/hextris.html', '_self')"></div>
                 </div>
               </div>
@@ -215,6 +163,6 @@
 
   </div>
 
-  <script src="/script.js"></script>
+  <script src="/js/script.js"></script>
 </body>
 </html>
