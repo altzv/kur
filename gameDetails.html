@@ -15,14 +15,22 @@
 
     <header class="header">
       <div class="header-container">
-        <a class="" href="/">
-          <img class="header-logo" src="images/logo-ru.png" alt="Логотип">
-        </a>
+        <div class="header-logo__wrapper">
+          <a href="/">
+            <img class="header-logo" src="images/logo-ru.png" alt="Логотип">
+          </a>
+        </div>
         <nav class="header-nav">
-          <a class="active" href="/index.html" data-key="nav1">Главная</a>
-          <a class="" href="/onlineGames.html" data-key="nav2">Онлайн игры</a>
+          <a class="" href="/index.html" data-key="nav1">Главная</a>
+          <a class="hide-small-screen" href="/onlineGames.html" data-key="nav2">Онлайн игры</a>
           <a class="" href="/allNews.html" data-key="nav3">Новости</a>
         </nav>
+        
+        <div class="hamburger-menu" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
         <div class="language-switcher">
           <div class="circle active" data-lang="ru">

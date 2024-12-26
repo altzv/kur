@@ -15,6 +15,7 @@ main {
 }
 
 .slider-wrapper {
+  width: 90%;
   max-width: 1220px;
   /* Максимальная ширина обертки */
   background-color: #1e1e1e;
@@ -39,8 +40,6 @@ main {
 }
 
 .image-slider {
-  width: 100%;
-  max-width: 1220px;
   height: 100%;
   /* Уменьшили высоту слайдера */
   overflow: hidden;
@@ -162,4 +161,14 @@ main {
 .image-slider__slide.swiper-slide-prev,
 .image-slider__slide.swiper-slide-next {
   transform: scale(0.95);
+}
+
+@media (max-width: 375px) {
+  .swiper-slide {
+    height: 280px;
+  }
+  .image-slider__slide.swiper-slide-prev,
+  .image-slider__slide.swiper-slide-next {
+    transform: scale(1);
+  }
 }

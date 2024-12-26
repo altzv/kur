@@ -63,6 +63,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.getElementById("hamburger-menu").addEventListener("click", function() {
+  var nav = document.querySelector(".header-nav");
+  nav.classList.toggle("active"); // Переключаем класс для показа/скрытия меню
+});
 
 new Swiper('.image-slider', {
   navigation: {
@@ -77,11 +81,16 @@ new Swiper('.image-slider', {
 
   loop: true,
   centeredSlides: true,
-  slidesPerView: 3,
-  spaceBetween: 30,
+  slidesPerView: 1,
+  spaceBetween: 20,
   autoplay: {
     delay: 2000,
     stopOnLastSlide: false,
     disableOnInteraction: false
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 3, // показывать 1 слайд на экранах меньше 768px
+    }
   }
 });

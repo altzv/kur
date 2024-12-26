@@ -179,13 +179,13 @@
   transform: translateY(-2px);
 }
 
-@media screen and (min-width:1160px) {
+@media (max-width:1024px) {
   .game-box {
     height: 100%;
     min-height: 376px;
     min-width: 389px;
   }
   .game-container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }

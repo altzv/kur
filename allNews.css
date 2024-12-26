@@ -142,7 +142,7 @@ footer p {
 .news-section {
   margin: 20px auto;
   padding: 20px;
-  width: 100%;
+  width: 90%;
   max-width: 1260px;
   color: white;
   text-align: left;
@@ -225,4 +225,168 @@ footer p {
 .news-title:hover {
   color: #af42ff;
   text-shadow: 0px 0px 8px rgba(212, 0, 255, 0.5);
+}
+
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 20;
+  position: absolute;
+  /* Для закрепления в правом верхнем углу */
+  top: 50%;
+  /* Центр по вертикали */
+  transform: translateY(-50%);
+  /* Центрируем по вертикали */
+}
+
+.hamburger-menu span {
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+    /* Скрыть навигацию по умолчанию */
+    flex-direction: column;
+    width: 20%;
+    background-color: #242424;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, .6);
+    margin-top: 10px;
+  }
+
+  .header-nav a {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .header-logo__wrapper {
+    display: flex;
+    justify-content: center;
+    /* Центрируем логотип по горизонтали */
+    align-items: center;
+    /* Центрируем логотип по вертикали */
+    width: auto;
+    /* Логотип будет занимать всю доступную ширину */
+    margin: 0 auto;
+    transform: translateX(35%);
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .header-nav.active {
+    display: flex;
+    z-index: 20;
+    /* Показываем меню, когда активен класс */
+  }
+
+  .header-container {
+    position: relative;
+  }
+
+  .slider-title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .image-slider__slide {
+    height: 250px;
+  }
+
+  .news-container {
+    grid-template-rows: 2fr;
+  }
+
+  .news-image {
+    height: 100px;
+  }
+
+  .news-title {
+    font-size: 16px;
+  }
+
+  .footer p {
+    font-size: 10px;
+  }
+
+  .language-switcher {
+    margin: 0;
+  }
+
+  .hide-small-screen {
+    display: none;
+  }
+}
+
+/* Адаптивность для очень маленьких экранов */
+@media (max-width: 480px) {
+
+  .news-title {
+    font-size: 14px;
+  }
+
+  .image-slider__slide {
+    height: 200px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    font-size: 14px;
+    top: 30%;
+  }
+
+  .slider-title {
+    font-size: 20px;
+  }
+
+  .header-logo__wrapper {
+    display: flex;
+    justify-content: center;
+    /* Центрируем логотип по горизонтали */
+    align-items: center;
+    /* Центрируем логотип по вертикали */
+    width: auto;
+    /* Логотип будет занимать всю доступную ширину */
+    margin: 0 auto;
+    transform: translateX(30%);
+  }
+}
+
+@media (max-width: 375px) {
+  .header-logo__wrapper {
+    display: flex;
+    justify-content: center;
+    /* Центрируем логотип по горизонтали */
+    align-items: center;
+    /* Центрируем логотип по вертикали */
+    width: auto;
+    /* Логотип будет занимать всю доступную ширину */
+    margin: 0 auto;
+    transform: translateX(15%);
+  }
+  .news-image {
+    width: 150px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 320px) {
+  .news-image {
+    width: 100px;
+    height: 100px;
+  }
 }

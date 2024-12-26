@@ -97,7 +97,6 @@ blockquote {
   background-color: #191919;
 }
 
-/* Мобильная адаптация */
 @media (max-width: 768px) {
   .news-container {
     max-width: 100%;
