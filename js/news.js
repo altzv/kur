@@ -25,7 +25,7 @@ const newsData = [
   },
   {
     id: 2,
-    title: "В Helldivers 2 начался новый кроссовер с Killzone 2",
+    title: {ru: `В Helldivers 2 начался новый кроссовер с Killzone 2`, en: `Helldivers 2 is set to feature a new crossover with Killzone 2`},
     content: {
       ru : `
         <p>Угроза просветлённых из <b>«Знамений Тирании»</b> устранена (хотя бы на время), поэтому авторы  Helldivers 2 вознаградили отважных Адских Десантников приятным <a target="__blank" href="https://store.steampowered.com/news/app/553850/view/516322672418750491">анонсом</a> — боевик получил свою первую коллаборацию. Гостевой игрой стала  Killzone 2 от Guerrilla Games.</p>
@@ -52,7 +52,7 @@ const newsData = [
   },
   {
     id: 3,
-    title: "Space Marine II, Wukong и другие — финальный список претендентов на «Премию Steam 2024»",
+    title: {ru: `Space Marine II, Wukong и другие — финальный список претендентов на «Премию Steam 2024»`, en: `Space Marine II, Wukong, and More — the Final List of Contenders for the 2024 Steam Awards`},
     content: {
       ru: `
         <b>Valve</b> <a target="__blank" href="https://store.steampowered.com/steamawards/2024">огласила</a> список игр, которые поборются за народную «Премию Steam». Голосование начнётся 19 декабря в 21:00 МСК и завершится 31 декабря в то же время. Победители станут известны сразу же.
@@ -504,7 +504,6 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(error => console.error("Ошибка загрузки языка:", error));
     }
 
-    // Обновляем контент страницы
     function updatePageContent(translations, lang) {
         const currentNews = newsData.find((news) => news.id === newsId);
 
